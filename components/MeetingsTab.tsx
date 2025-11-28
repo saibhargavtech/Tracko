@@ -45,8 +45,8 @@ export default function MeetingsTab() {
 
       if (error) throw error
       setMeetings(data || [])
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     } finally {
       setLoading(false)
     }
@@ -82,8 +82,8 @@ export default function MeetingsTab() {
       setShowModal(false)
       resetForm()
       fetchMeetings()
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     }
   }
 
@@ -97,8 +97,8 @@ export default function MeetingsTab() {
         .eq('id', id)
       if (error) throw error
       fetchMeetings()
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     }
   }
 

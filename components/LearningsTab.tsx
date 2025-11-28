@@ -47,8 +47,8 @@ export default function LearningsTab() {
 
       if (error) throw error
       setLearnings(data || [])
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     } finally {
       setLoading(false)
     }
@@ -85,8 +85,8 @@ export default function LearningsTab() {
       setShowModal(false)
       resetForm()
       fetchLearnings()
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     }
   }
 
@@ -100,8 +100,8 @@ export default function LearningsTab() {
         .eq('id', id)
       if (error) throw error
       fetchLearnings()
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     }
   }
 
@@ -116,8 +116,8 @@ export default function LearningsTab() {
         .eq('id', learning.id)
       if (error) throw error
       fetchLearnings()
-    } catch (err: any) {
-      setError(err.message)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
     }
   }
 

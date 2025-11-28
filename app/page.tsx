@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { supabase } from '@/lib/supabase'
 import MeetingsTab from '@/components/MeetingsTab'
 import TodosTab from '@/components/TodosTab'
 import LearningsTab from '@/components/LearningsTab'
